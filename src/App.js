@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useAuth } from "./Contexts/AuthContext";
+import FullPageProgress from "./Components/FullPageProgress/FullPageProgress";
+import AuthenticatedApp from "./Components/AuthenticatedApp/AuthenticatedApp";
+import UnauthenticatedApp from "./Components/UnauthenticatedApp/UnauthenticatedApp";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { currentUser, isLoading } = useAuth();
+  if (isLoading) return <FullPageProgress size={100} />;
+  if (currentUser) {
+    return <AuthenticatedApp />;
+  } else {
+    return <UnauthenticatedApp />;
+  }
 }
 
 export default App;
