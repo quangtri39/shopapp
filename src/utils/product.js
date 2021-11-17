@@ -54,7 +54,7 @@ function useSnapshotCollection(collectionName, whereKey, whereValue) {
       },
       (error) => {
         setStatus("error");
-        setError(error);
+        setError(error.toString());
       }
     );
     return unsubscribe;
@@ -101,7 +101,7 @@ function useSnapshotCollectionUID(collectionName, paramName) {
       },
       (error) => {
         setStatus("error");
-        setError(error);
+        setError(error.toString());
       }
     );
     return unsubscribe;
@@ -155,7 +155,7 @@ function useSnapshotCollectionParam(collectionName, paramName) {
       },
       (error) => {
         setStatus("error");
-        setError(error);
+        setError(error.toString());
       }
     );
     return unsubscribe;
@@ -209,7 +209,7 @@ function useSnapshotCollectionDocId(collectionName, filterArray) {
       },
       (error) => {
         setStatus("error");
-        setError(error);
+        setError(error.toString());
       }
     );
     return unsubscribe;
@@ -261,7 +261,7 @@ function useSnapshotCollectionQueryIn(collectionName, field, filterArray) {
       },
       (error) => {
         setStatus("error");
-        setError(error);
+        setError(error.toString());
       }
     );
     return unsubscribe;

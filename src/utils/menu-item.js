@@ -18,7 +18,7 @@ function useListMenuItem() {
     {
       title: "My shop",
       ariaLabel: "show shop",
-      badgeContent: 0,
+      badgeContent: 1,
       icon: <StoreIcon />,
       onClick: () => navigate("/myShop"),
     },

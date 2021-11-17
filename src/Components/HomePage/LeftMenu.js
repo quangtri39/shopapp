@@ -1,4 +1,5 @@
 import {
+  Alert,
   Avatar,
   Divider,
   ListItem,
@@ -44,7 +45,7 @@ export default function LeftMenu() {
   const navigate = useNavigate();
 
   if (error) {
-    return error;
+    return <Alert severity="error">{error}</Alert>;
   }
 
   if (isLoading) {
